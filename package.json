@@ -1,0 +1,28 @@
+{
+  "name": "cap_sap_roadmap",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "https://github.com/santiagogm1995/cap_sap_roadmap.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "sqlite3": "^4"
+  },
+  "scripts": {
+    "start": "npx cds run"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "db/my.db"
+        }
+      }
+    }
+  }
+}
