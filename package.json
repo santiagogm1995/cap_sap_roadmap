@@ -6,34 +6,29 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^4",
-    "express": "^4",
-    "passport": "^0.4.1"
-  },
-  "devDependencies": {
-    "sqlite3": "^4"
+    "@sap/audit-logging": "^3.1.1",
+    "@sap/cds": "^4.1.7",
+    "@sap/hana-client": "^2.5.105",
+    "@sap/xsenv": "^3.0.0",
+    "@sap/xssec": "^3.0.9",
+    "express": "^4.17.1",
+    "npm-run-all": "^4.1.5",
+    "passport": "^0.4.1",
+    "sqlite3": "^5.0.0"
   },
   "scripts": {
     "start": "npx cds run"
   },
   "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
     "requires": {
       "db": {
-        "kind": "sqlite",
-        "credentials": {
-          "database": "db/my.db"
-        }
+        "kind": "hana"
       },
-      "strategy": "mock",
-      "auth": {
-        "users": {
-          "sgonzmot": {
-            "password": "1234",
-            "roles": [
-              "admin"
-            ]
-          }
-        }
+      "uaa": {
+        "kind": "xsuaa"
       }
     }
   }
